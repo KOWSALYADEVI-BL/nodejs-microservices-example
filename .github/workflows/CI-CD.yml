@@ -11,16 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1️⃣ Checkout the code
     - name: Checkout code
       uses: actions/checkout@v4
 
+    # 2️⃣ Setup Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
 
+    # 3️⃣ Install dependencies
     - name: Install dependencies
       run: npm install
 
+    # 4️⃣ Run tests (if any)
     - name: Run tests
       run: npm test --if-present
